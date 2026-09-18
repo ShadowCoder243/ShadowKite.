@@ -1,59 +1,44 @@
-# ShadowkiteFrontend
+# ShadowKite — CV & Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
+Frontend Angular de ShadowKite, une plateforme open source qui aide chacun à créer un profil professionnel, un CV et un portfolio public partageable.
 
-## Development server
+## Ce qui est inclus
 
-To start a local development server, run:
+Cette version est volontairement **frontend uniquement**. Elle propose un espace multipage prêt à être relié à une API :
 
-```bash
-ng serve
-```
+- tableau de bord avec progression, activités, tâches et projets ;
+- profil éditable avec aperçu en direct ;
+- créateur de CV guidé : informations, expériences, formation et compétences ;
+- portfolio avec cartes de projets et état vide ;
+- aperçu de la page publique et copie du lien unique ;
+- modules complémentaires d’organisation : tâches, projets, calendrier, notes et contacts ;
+- navigation responsive pour téléphone, tablette et ordinateur ;
+- états de brouillon, notifications locales et interactions de démonstration.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Les données affichées sont locales et de démonstration. Les boutons d’action sont déjà séparés par module pour faciliter leur remplacement par des appels API, sans inventer de backend dans ce dépôt.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Démarrer
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
-
-To build the project run:
+L’application est disponible sur `http://localhost:4200/`. Dans Replit, le workflow utilise le port 5000 :
 
 ```bash
-ng build
+NG_CLI_ANALYTICS=false npm start -- --host 0.0.0.0 --port 5000
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Compiler et tester
 
 ```bash
-ng test
+npm run build
+npm test
 ```
 
-## Running end-to-end tests
+## Préparer le backend
 
-For end-to-end (e2e) testing, run:
+Les prochains contrats API peuvent suivre les objets décrits dans le cahier de projet : `User`, `Profile`, `CV`, `Project`, `Portfolio` et `Preferences`. Le frontend devra ensuite remplacer les signaux de démonstration par des services Angular typés, avec gestion des états de chargement, erreur, brouillon et publication.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Le cahier fonctionnel de référence couvre le parcours public, l’espace utilisateur, l’éditeur, la page publique et l’administration minimale.
